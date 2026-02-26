@@ -9,144 +9,78 @@ export default function FreelanceTaxPro() {
   const [language, setLanguage] = useState("en");
 
   const countries = {
-    usa: {
-      name: "United States",
-      currency: "$",
-      taxRate: 0.25,
-      seTaxRate: 0.153,
-      stateAvg: 0.05,
-      flag: "🇺🇸",
-    },
-    uk: {
-      name: "United Kingdom",
-      currency: "£",
-      taxRate: 0.2,
-      niRate: 0.08,
-      flag: "🇬🇧",
-    },
-    canada: {
-      name: "Canada",
-      currency: "CAD $",
-      taxRate: 0.25,
-      provAvg: 0.08,
-      flag: "🇨🇦",
-    },
-    australia: {
-      name: "Australia",
-      currency: "AUD $",
-      taxRate: 0.37,
-      flag: "🇦🇺",
-    },
-    eu: {
-      name: "European Union",
-      currency: "€",
-      taxRate: 0.22,
-      vatRate: 0.19,
-      flag: "🇪🇺",
-    },
-    russia: {
-      name: "Russia",
-      currency: "₽",
-      taxRate: 0.06,
-      flag: "🇷🇺",
-    },
-    india: {
-      name: "India",
-      currency: "₹",
-      taxRate: 0.3,
-      flag: "🇮🇳",
-    },
-    philippines: {
-      name: "Philippines",
-      currency: "₱",
-      taxRate: 0.32,
-      flag: "🇵🇭",
-    },
+    usa: { name: "United States", taxRate: 0.25, flag: "🇺🇸", currency: "$" },
+    uk: { name: "United Kingdom", taxRate: 0.28, flag: "🇬🇧", currency: "£" },
+    russia: { name: "Russia", taxRate: 0.13, flag: "🇷🇺", currency: "₽" },
+    canada: { name: "Canada", taxRate: 0.30, flag: "🇨🇦", currency: "C$" },
+    australia: { name: "Australia", taxRate: 0.37, flag: "🇦🇺", currency: "A$" },
+    india: { name: "India", taxRate: 0.30, flag: "🇮🇳", currency: "₹" },
+    philippines: { name: "Philippines", taxRate: 0.32, flag: "🇵🇭", currency: "₱" },
+    eu: { name: "European Union", taxRate: 0.35, flag: "🇪🇺", currency: "€" },
   };
 
   const platforms = {
-    upwork: { name: "Upwork", commission: 0.05 },
+    upwork: { name: "Upwork", commission: 0.1 },
     fiverr: { name: "Fiverr", commission: 0.2 },
-    freelancer: { name: "Freelancer.com", commission: 0.1 },
-    direct: { name: "Direct Clients", commission: 0 },
+    freelancer: { name: "Freelancer", commission: 0.1 },
     guru: { name: "Guru", commission: 0.09 },
+    direct: { name: "Direct Clients", commission: 0 },
   };
 
   const translations = {
     en: {
-      landing_title: "Calculate Your Real Freelance Income",
-      landing_subtitle:
-        "Know exactly how much you'll earn after taxes and platform fees",
-      landing_cta: "Calculate Now",
-      calculator_title: "Freelance Tax Calculator",
+      title: "Freelance Tax Pro",
+      subtitle: "Calculate Your Real Freelance Income",
+      description: "Know exactly how much you'll earn after taxes and platform fees",
+      calculateBtn: "Calculate Now",
       country: "Select Country",
-      income_label: "Annual Income",
-      platform_label: "Work Platform",
-      calculate_btn: "Calculate",
+      income: "Annual Income",
+      platform: "Select Platform",
       results: "Your Results",
-      gross_income: "Gross Income",
-      platform_fee: "Platform Commission",
-      taxes: "Total Taxes",
-      net_income: "Net Income (Take Home)",
-      tax_breakdown: "Tax Breakdown",
-      monthly_net: "Monthly Net Income",
-      features: "Premium Features",
-      feature1: "Support All Countries",
-      feature2: "Tax Optimization Tips",
-      feature3: "PDF Reports",
-      feature4: "Monthly Tracking",
+      grossIncome: "Gross Income",
+      platformCommission: "Platform Commission",
+      totalTaxes: "Total Taxes",
+      netIncome: "Net Income",
+      monthlyIncome: "Monthly Income",
+      premiumFeatures: "Premium Features",
+      unlock: "Unlock Premium Features",
       price: "$4.99/month",
-      cta_premium: "Go Premium",
     },
     es: {
-      landing_title: "Calcula Tu Ingreso Real como Freelancer",
-      landing_subtitle:
-        "Sabe exactamente cuánto ganarás después de impuestos y comisiones",
-      landing_cta: "Calcular Ahora",
-      calculator_title: "Calculadora de Impuestos para Freelancers",
-      country: "Selecciona País",
-      income_label: "Ingreso Anual",
-      platform_label: "Plataforma de Trabajo",
-      calculate_btn: "Calcular",
+      title: "Freelance Tax Pro",
+      subtitle: "Calcula Tu Ingreso Real de Freelancer",
+      description: "Sabe exactamente cuánto ganarás después de impuestos y comisiones",
+      calculateBtn: "Calcular Ahora",
+      country: "Seleccionar País",
+      income: "Ingreso Anual",
+      platform: "Seleccionar Plataforma",
       results: "Tus Resultados",
-      gross_income: "Ingreso Bruto",
-      platform_fee: "Comisión de Plataforma",
-      taxes: "Impuestos Totales",
-      net_income: "Ingreso Neto (A Tu Bolsillo)",
-      tax_breakdown: "Desglose de Impuestos",
-      monthly_net: "Ingreso Neto Mensual",
-      features: "Características Premium",
-      feature1: "Soporta Todos los Países",
-      feature2: "Consejos de Optimización",
-      feature3: "Reportes en PDF",
-      feature4: "Seguimiento Mensual",
+      grossIncome: "Ingreso Bruto",
+      platformCommission: "Comisión de Plataforma",
+      totalTaxes: "Impuestos Totales",
+      netIncome: "Ingreso Neto",
+      monthlyIncome: "Ingreso Mensual",
+      premiumFeatures: "Características Premium",
+      unlock: "Desbloquear Características Premium",
       price: "$4.99/mes",
-      cta_premium: "Obtener Premium",
     },
     ru: {
-      landing_title: "Рассчитай свой реальный доход фрилансера",
-      landing_subtitle:
-        "Узнай точно сколько ты заработаешь после налогов и комиссий",
-      landing_cta: "Рассчитать",
-      calculator_title: "Калькулятор налогов фрилансера",
-      country: "Выбери страну",
-      income_label: "Годовой доход",
-      platform_label: "Платформа работы",
-      calculate_btn: "Рассчитать",
-      results: "Ваши результаты",
-      gross_income: "Валовый доход",
-      platform_fee: "Комиссия платформы",
-      taxes: "Общие налоги",
-      net_income: "Чистый доход (В кармане)",
-      tax_breakdown: "Разбор налогов",
-      monthly_net: "Месячный чистый доход",
-      features: "Премиум функции",
-      feature1: "Все страны",
-      feature2: "Советы по оптимизации",
-      feature3: "PDF отчёты",
-      feature4: "Ежемесячное отслеживание",
+      title: "Freelance Tax Pro",
+      subtitle: "Рассчитайте Ваш Реальный Доход Фрилансера",
+      description: "Узнайте точно сколько вы заработаете после налогов и комиссий",
+      calculateBtn: "Рассчитать",
+      country: "Выбрать Страну",
+      income: "Годовой Доход",
+      platform: "Выбрать Платформу",
+      results: "Ваши Результаты",
+      grossIncome: "Валовой Доход",
+      platformCommission: "Комиссия Платформы",
+      totalTaxes: "Общие Налоги",
+      netIncome: "Чистый Доход",
+      monthlyIncome: "Ежемесячный Доход",
+      premiumFeatures: "Премиум Функции",
+      unlock: "Разблокировать Премиум",
       price: "$4.99/месяц",
-      cta_premium: "Premium версия",
     },
   };
 
@@ -154,267 +88,162 @@ export default function FreelanceTaxPro() {
 
   const calculateTax = () => {
     const incomeNum = parseFloat(income) || 0;
-    const country = countries[selectedCountry];
-    const plat = platforms[platform];
+    const countryData = countries[selectedCountry];
+    const platformData = platforms[platform];
 
-    const platformFee = incomeNum * plat.commission;
-    const afterPlatform = incomeNum - platformFee;
-
-    let totalTax = 0;
-    let taxBreakdown = {};
-
-    if (selectedCountry === "usa") {
-      const fedTax = afterPlatform * country.taxRate;
-      const seTax = afterPlatform * country.seTaxRate;
-      const stateTax = afterPlatform * country.stateAvg;
-      totalTax = fedTax + seTax + stateTax;
-      taxBreakdown = {
-        federal: fedTax,
-        selfEmployment: seTax,
-        state: stateTax,
-      };
-    } else if (selectedCountry === "uk") {
-      const incomeTax = afterPlatform * country.taxRate;
-      const niTax = afterPlatform * country.niRate;
-      totalTax = incomeTax + niTax;
-      taxBreakdown = { incomeTax: incomeTax, ni: niTax };
-    } else if (selectedCountry === "russia") {
-      totalTax = afterPlatform * country.taxRate;
-      taxBreakdown = { npd: totalTax };
-    } else {
-      totalTax = afterPlatform * country.taxRate;
-      taxBreakdown = { income: totalTax };
-    }
-
-    const netIncome = afterPlatform - totalTax;
-    const monthlyNet = netIncome / 12;
+    const platformCommissionAmount = incomeNum * platformData.commission;
+    const afterPlatform = incomeNum - platformCommissionAmount;
+    const taxes = afterPlatform * countryData.taxRate;
+    const netIncome = afterPlatform - taxes;
+    const monthlyNetIncome = netIncome / 12;
 
     return {
       grossIncome: incomeNum,
-      platformFee: platformFee,
-      totalTax: totalTax,
+      platformCommission: platformCommissionAmount,
+      afterPlatform: afterPlatform,
+      taxes: taxes,
       netIncome: netIncome,
-      monthlyNet: monthlyNet,
-      taxBreakdown: taxBreakdown,
+      monthlyNetIncome: monthlyNetIncome,
+      taxPercentage: (taxes / afterPlatform) * 100,
+      commissionPercentage: platformData.commission * 100,
     };
   };
 
-  const results = calculateTax();
-  const country = countries[selectedCountry];
+  const renderLanding = () => {
+    return (
+      <div className="landing-page">
+        <div className="hero">
+          <h1>💰 {t.title}</h1>
+          <h2>{t.subtitle}</h2>
+          <p>{t.description}</p>
+          <button className="cta-button" onClick={() => setActiveTab("calculator")}>
+            {t.calculateBtn}
+          </button>
+        </div>
 
-  const renderLanding = () => (
-    <div className="landing">
-      <div className="hero">
-        <h1>{t.landing_title}</h1>
-        <p>{t.landing_subtitle}</p>
-        <button
-          className="cta-button"
-          onClick={() => setActiveTab("calculator")}
-        >
-          {t.landing_cta}
-        </button>
-      </div>
-
-      <div className="features-section">
-        <h2>{t.features}</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🌍</div>
-            <p>{t.feature1}</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">💡</div>
-            <p>{t.feature2}</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📄</div>
-            <p>{t.feature3}</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📊</div>
-            <p>{t.feature4}</p>
+        <div className="features-section">
+          <h2>{t.premiumFeatures}</h2>
+          <div className="features-grid">
+            <div className="feature"><span>🌍</span><p>Support All Countries</p></div>
+            <div className="feature"><span>💡</span><p>Tax Optimization Tips</p></div>
+            <div className="feature"><span>📄</span><p>PDF Reports</p></div>
+            <div className="feature"><span>📊</span><p>Monthly Tracking</p></div>
           </div>
         </div>
-      </div>
 
-      <div className="premium-section">
-        <h2>Unlock Premium Features</h2>
-        <p className="price">{t.price}</p>
-        <button className="premium-button">{t.cta_premium}</button>
-      </div>
-    </div>
-  );
-
-  const renderCalculator = () => (
-    <div className="calculator">
-      <div className="calc-header">
-        <h2>{t.calculator_title}</h2>
-        <button className="back-button" onClick={() => setActiveTab("landing")}>
-          ← Back
-        </button>
-      </div>
-
-      <div className="calc-form">
-        <div className="form-group">
-          <label>{t.country}</label>
-          <select
-            value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
-          >
-            {Object.entries(countries).map(([key, val]) => (
-              <option key={key} value={key}>
-                {val.flag} {val.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label>{t.income_label}</label>
-          <input
-            type="number"
-            value={income}
-            onChange={(e) => setIncome(e.target.value)}
-            placeholder="50000"
-          />
-        </div>
-
-        <div className="form-group">
-          <label>{t.platform_label}</label>
-          <select
-            value={platform}
-            onChange={(e) => setPlatform(e.target.value)}
-          >
-            {Object.entries(platforms).map(([key, val]) => (
-              <option key={key} value={key}>
-                {val.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="language-selector">
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-          >
-            <option value="en">🇬🇧 English</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="ru">🇷🇺 Русский</option>
-          </select>
+        <div className="pricing-section">
+          <h2>{t.unlock}</h2>
+          <p>{t.price}</p>
+          <button className="premium-button">Go Premium</button>
         </div>
       </div>
+    );
+  };
 
-      <div className="results-section">
-        <h3>{t.results}</h3>
+  const renderCalculator = () => {
+    const results = calculateTax();
 
-        <div className="result-item">
-          <span>{t.gross_income}</span>
-          <span className="amount">
-            {country.currency}
-            {results.grossIncome.toFixed(2)}
-          </span>
-        </div>
+    return (
+      <div className="calculator-page">
+        <div className="calculator-container">
+          <h2>{t.subtitle}</h2>
 
-        <div className="result-item highlight-red">
-          <span>{t.platform_fee}</span>
-          <span className="amount">
-            -{country.currency}
-            {results.platformFee.toFixed(2)}
-          </span>
-        </div>
-
-        <div className="result-item highlight-red">
-          <span>{t.taxes}</span>
-          <span className="amount">
-            -{country.currency}
-            {results.totalTax.toFixed(2)}
-          </span>
-        </div>
-
-        <div className="result-item main-result">
-          <span>{t.net_income}</span>
-          <span className="amount highlight-green">
-            {country.currency}
-            {results.netIncome.toFixed(2)}
-          </span>
-        </div>
-
-        <div className="result-item monthly">
-          <span>{t.monthly_net}</span>
-          <span className="amount">
-            {country.currency}
-            {results.monthlyNet.toFixed(2)}
-          </span>
-        </div>
-
-        <div className="chart">
-          <div className="chart-breakdown">
-            <div className="breakdown-item">
-              <div
-                className="bar"
-                style={{
-                  width: `${
-                    (results.platformFee / results.grossIncome) * 100
-                  }%`,
-                  backgroundColor: "#E74C3C",
-                }}
-              ></div>
-              <span>
-                Platform (
-                {((results.platformFee / results.grossIncome) * 100).toFixed(1)}
-                %)
-              </span>
+          <div className="input-section">
+            <div className="input-group">
+              <label>{t.country}:</label>
+              <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
+                {Object.entries(countries).map(([key, country]) => (
+                  <option key={key} value={key}>{country.flag} {country.name}</option>
+                ))}
+              </select>
             </div>
-            <div className="breakdown-item">
-              <div
-                className="bar"
-                style={{
-                  width: `${(results.totalTax / results.grossIncome) * 100}%`,
-                  backgroundColor: "#E67E22",
-                }}
-              ></div>
-              <span>
-                Taxes (
-                {((results.totalTax / results.grossIncome) * 100).toFixed(1)}%)
-              </span>
+
+            <div className="input-group">
+              <label>{t.income}:</label>
+              <input type="number" value={income} onChange={(e) => setIncome(e.target.value)} placeholder="50000" />
             </div>
-            <div className="breakdown-item">
-              <div
-                className="bar"
-                style={{
-                  width: `${(results.netIncome / results.grossIncome) * 100}%`,
-                  backgroundColor: "#27AE60",
-                }}
-              ></div>
-              <span>
-                Your Income (
-                {((results.netIncome / results.grossIncome) * 100).toFixed(1)}%)
-              </span>
+
+            <div className="input-group">
+              <label>{t.platform}:</label>
+              <select value={platform} onChange={(e) => setPlatform(e.target.value)}>
+                {Object.entries(platforms).map(([key, plat]) => (
+                  <option key={key} value={key}>{plat.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="language-selector">
+              <button onClick={() => setLanguage("en")} className={language === "en" ? "active" : ""}>English</button>
+              <button onClick={() => setLanguage("es")} className={language === "es" ? "active" : ""}>Español</button>
+              <button onClick={() => setLanguage("ru")} className={language === "ru" ? "active" : ""}>Русский</button>
             </div>
           </div>
-        </div>
 
-        <button className="premium-button">{t.cta_premium}</button>
+          <div className="results-section">
+            <h3>{t.results}</h3>
+
+            <div className="results-grid">
+              <div className="result-item">
+                <span>{t.grossIncome}</span>
+                <strong>{countries[selectedCountry].currency}{results.grossIncome.toFixed(2)}</strong>
+              </div>
+
+              <div className="result-item commission">
+                <span>{t.platformCommission}</span>
+                <strong>-{countries[selectedCountry].currency}{results.platformCommission.toFixed(2)}</strong>
+              </div>
+
+              <div className="result-item taxes">
+                <span>{t.totalTaxes}</span>
+                <strong>-{countries[selectedCountry].currency}{results.taxes.toFixed(2)} ({results.taxPercentage.toFixed(1)}%)</strong>
+              </div>
+
+              <div className="result-item net-income">
+                <span>{t.netIncome}</span>
+                <strong>{countries[selectedCountry].currency}{results.netIncome.toFixed(2)}</strong>
+              </div>
+
+              <div className="result-item monthly">
+                <span>{t.monthlyIncome}</span>
+                <strong>{countries[selectedCountry].currency}{results.monthlyNetIncome.toFixed(2)}</strong>
+              </div>
+            </div>
+
+            <div className="breakdown-chart">
+              <div className="chart-bar">
+                <div className="bar-segment green" style={{ width: `${(results.netIncome / results.grossIncome) * 100}%` }}></div>
+                <div className="bar-segment orange" style={{ width: `${(results.taxes / results.grossIncome) * 100}%` }}></div>
+                <div className="bar-segment red" style={{ width: `${(results.platformCommission / results.grossIncome) * 100}%` }}></div>
+              </div>
+              <div className="legend">
+                <span><span className="dot green"></span>Net Income</span>
+                <span><span className="dot orange"></span>Taxes</span>
+                <span><span className="dot red"></span>Commission</span>
+              </div>
+            </div>
+          </div>
+
+          <button className="back-button" onClick={() => setActiveTab("landing")}>← Back to Home</button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
-    <div className="freelance-tax-pro">
+    <div className="app-container">
       <nav className="navbar">
-        <h1 className="logo">💰 FREELANCE TAX PRO</h1>
-        <p className="tagline">Calculate Your Real Income</p>
+        <h1 onClick={() => setActiveTab("landing")} style={{ cursor: "pointer" }}>💰 {t.title}</h1>
+        <button className="nav-button" onClick={() => setActiveTab("landing")}>Home</button>
+        <button className="nav-button" onClick={() => setActiveTab("calculator")}>Calculator</button>
       </nav>
 
-      {activeTab === "landing" ? renderLanding() : renderCalculator()}
+      <main className="main-content">
+        {activeTab === "landing" ? renderLanding() : renderCalculator()}
+      </main>
 
       <footer className="footer">
         <p>© 2024 Freelance Tax Pro. All rights reserved.</p>
-        <p>
-          This is a calculation tool. Consult a tax professional for
-          personalized advice.
-        </p>
+        <p>This is a calculation tool. Consult a tax professional for personalized advice.</p>
       </footer>
     </div>
   );
