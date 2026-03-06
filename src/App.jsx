@@ -1,415 +1,252 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* NAVBAR */
-.navbar {
-  background: linear-gradient(135deg, #27ae60 0%, #2980b9 100%);
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.navbar h1 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-button {
-  background-color: rgba(255,255,255,0.2);
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  margin-left: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.nav-button:hover {
-  background-color: rgba(255,255,255,0.3);
-}
-
-/* MAIN CONTENT */
-.main-content {
-  flex: 1;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* LANDING PAGE */
-.landing-page {
-  text-align: center;
-}
-
-.hero {
-  background: linear-gradient(135deg, #27ae60 0%, #2980b9 100%);
-  color: white;
-  padding: 60px 30px;
-  border-radius: 15px;
-  margin-bottom: 40px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.hero h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
-  margin-bottom: 30px;
-}
-
-.cta-button {
-  background-color: #f39c12;
-  color: white;
-  padding: 15px 40px;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #e67e22;
-}
-
-/* FEATURES */
-.features-section {
-  margin-bottom: 40px;
-}
-
-.features-section h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.feature {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.feature span {
-  font-size: 40px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* PRICING */
-.pricing-section {
-  text-align: center;
-  padding: 50px 30px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 15px;
-  color: white;
-  margin: 40px 0;
-}
-
-.pricing-section h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.pricing-section p {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.premium-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 35px;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.premium-button:hover {
-  background-color: #45a049;
-}
-
-/* CALCULATOR PAGE */
-.calculator-page {
-  width: 100%;
-}
-
-.calculator-container {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.calculator-container h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #333;
-}
-
-/* INPUTS */
-.input-section {
-  margin-bottom: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group label {
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #333;
-}
-
-.input-group input,
-.input-group select {
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-  outline: none;
-  border-color: #27ae60;
-}
-
-/* LANGUAGE SELECTOR */
-.language-selector {
-  display: flex;
-  gap: 10px;
-  grid-column: 1 / -1;
-}
-
-.language-selector button {
-  flex: 1;
-  padding: 10px;
-  border: 2px solid #ddd;
-  background-color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.language-selector button.active {
-  background-color: #27ae60;
-  color: white;
-  border-color: #27ae60;
-}
-
-/* RESULTS */
-.results-section {
-  margin-top: 40px;
-}
-
-.results-section h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.result-item {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  border-left: 5px solid #27ae60;
-}
-
-.result-item.commission {
-  border-left-color: #e74c3c;
-}
-
-.result-item.taxes {
-  border-left-color: #f39c12;
-}
-
-.result-item.net-income {
-  border-left-color: #27ae60;
-  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
-}
-
-.result-item.monthly {
-  border-left-color: #2980b9;
-}
-
-.result-item span {
-  display: block;
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 8px;
-}
-
-.result-item strong {
-  font-size: 22px;
-  color: #333;
-}
-
-/* CHART */
-.breakdown-chart {
-  margin: 30px 0;
-}
-
-.chart-bar {
-  display: flex;
-  height: 30px;
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.bar-segment {
-  height: 100%;
-}
-
-.bar-segment.green {
-  background-color: #27ae60;
-}
-
-.bar-segment.orange {
-  background-color: #f39c12;
-}
-
-.bar-segment.red {
-  background-color: #e74c3c;
-}
-
-.legend {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.legend span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
-
-.dot {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-}
-
-.dot.green {
-  background-color: #27ae60;
-}
-
-.dot.orange {
-  background-color: #f39c12;
-}
-
-.dot.red {
-  background-color: #e74c3c;
-}
-
-/* BUTTONS */
-.back-button {
-  display: block;
-  margin: 30px auto 0;
-  background-color: #95a5a6;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.back-button:hover {
-  background-color: #7f8c8d;
-}
-
-/* FOOTER */
-.footer {
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
-  font-size: 14px;
-}
-
-.footer p {
-  margin: 8px 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero h2 {
-    font-size: 20px;
-  }
-
-  .calculator-container {
-    padding: 20px;
-  }
-
-  .input-section {
-    grid-template-columns: 1fr;
-  }
+import React, { useState } from "react";
+import "./styles.css";
+
+export default function FreelanceTaxPro() {
+  const [activeTab, setActiveTab] = useState("landing");
+  const [selectedCountry, setSelectedCountry] = useState("usa");
+  const [income, setIncome] = useState("50000");
+  const [platform, setPlatform] = useState("upwork");
+  const [language, setLanguage] = useState("en");
+
+  const countries = {
+    usa: { name: "United States", taxRate: 0.25, flag: "🇺🇸", currency: "$" },
+    uk: { name: "United Kingdom", taxRate: 0.28, flag: "🇬🇧", currency: "£" },
+    russia: { name: "Russia", taxRate: 0.13, flag: "🇷🇺", currency: "₽" },
+    canada: { name: "Canada", taxRate: 0.30, flag: "🇨🇦", currency: "C$" },
+    australia: { name: "Australia", taxRate: 0.37, flag: "🇦🇺", currency: "A$" },
+    india: { name: "India", taxRate: 0.30, flag: "🇮🇳", currency: "₹" },
+    philippines: { name: "Philippines", taxRate: 0.32, flag: "🇵🇭", currency: "₱" },
+    eu: { name: "European Union", taxRate: 0.35, flag: "🇪🇺", currency: "€" },
+  };
+
+  const platforms = {
+    upwork: { name: "Upwork", commission: 0.1 },
+    fiverr: { name: "Fiverr", commission: 0.2 },
+    freelancer: { name: "Freelancer", commission: 0.1 },
+    guru: { name: "Guru", commission: 0.09 },
+    direct: { name: "Direct Clients", commission: 0 },
+  };
+
+  const translations = {
+    en: {
+      title: "Freelance Tax Pro",
+      subtitle: "Calculate Your Real Freelance Income",
+      description: "Know exactly how much you'll earn after taxes and platform fees",
+      calculateBtn: "Calculate Now",
+      country: "Select Country",
+      income: "Annual Income",
+      platform: "Select Platform",
+      results: "Your Results",
+      grossIncome: "Gross Income",
+      platformCommission: "Platform Commission",
+      totalTaxes: "Total Taxes",
+      netIncome: "Net Income",
+      monthlyIncome: "Monthly Income",
+      premiumFeatures: "Premium Features",
+      unlock: "Unlock Premium Features",
+      price: "$4.99/month",
+    },
+    es: {
+      title: "Freelance Tax Pro",
+      subtitle: "Calcula Tu Ingreso Real de Freelancer",
+      description: "Sabe exactamente cuánto ganarás después de impuestos y comisiones",
+      calculateBtn: "Calcular Ahora",
+      country: "Seleccionar País",
+      income: "Ingreso Anual",
+      platform: "Seleccionar Plataforma",
+      results: "Tus Resultados",
+      grossIncome: "Ingreso Bruto",
+      platformCommission: "Comisión de Plataforma",
+      totalTaxes: "Impuestos Totales",
+      netIncome: "Ingreso Neto",
+      monthlyIncome: "Ingreso Mensual",
+      premiumFeatures: "Características Premium",
+      unlock: "Desbloquear Características Premium",
+      price: "$4.99/mes",
+    },
+    ru: {
+      title: "Freelance Tax Pro",
+      subtitle: "Рассчитайте Ваш Реальный Доход Фрилансера",
+      description: "Узнайте точно сколько вы заработаете после налогов и комиссий",
+      calculateBtn: "Рассчитать",
+      country: "Выбрать Страну",
+      income: "Годовой Доход",
+      platform: "Выбрать Платформу",
+      results: "Ваши Результаты",
+      grossIncome: "Валовой Доход",
+      platformCommission: "Комиссия Платформы",
+      totalTaxes: "Общие Налоги",
+      netIncome: "Чистый Доход",
+      monthlyIncome: "Ежемесячный Доход",
+      premiumFeatures: "Премиум Функции",
+      unlock: "Разблокировать Премиум",
+      price: "$4.99/месяц",
+    },
+  };
+
+  const t = translations[language];
+
+  const calculateTax = () => {
+    const incomeNum = parseFloat(income) || 0;
+    const countryData = countries[selectedCountry];
+    const platformData = platforms[platform];
+
+    const platformCommissionAmount = incomeNum * platformData.commission;
+    const afterPlatform = incomeNum - platformCommissionAmount;
+    const taxes = afterPlatform * countryData.taxRate;
+    const netIncome = afterPlatform - taxes;
+    const monthlyNetIncome = netIncome / 12;
+
+    return {
+      grossIncome: incomeNum,
+      platformCommission: platformCommissionAmount,
+      afterPlatform: afterPlatform,
+      taxes: taxes,
+      netIncome: netIncome,
+      monthlyNetIncome: monthlyNetIncome,
+      taxPercentage: (taxes / afterPlatform) * 100,
+      commissionPercentage: platformData.commission * 100,
+    };
+  };
+
+  const renderLanding = () => {
+    return (
+      <div className="landing-page">
+        <div className="hero">
+          <h1>💰 {t.title}</h1>
+          <h2>{t.subtitle}</h2>
+          <p>{t.description}</p>
+          <button className="cta-button" onClick={() => setActiveTab("calculator")}>
+            {t.calculateBtn}
+          </button>
+        </div>
+
+        <div className="features-section">
+          <h2>{t.premiumFeatures}</h2>
+          <div className="features-grid">
+            <div className="feature"><span>🌍</span><p>Support All Countries</p></div>
+            <div className="feature"><span>💡</span><p>Tax Optimization Tips</p></div>
+            <div className="feature"><span>📄</span><p>PDF Reports</p></div>
+            <div className="feature"><span>📊</span><p>Monthly Tracking</p></div>
+          </div>
+        </div>
+
+        <div className="pricing-section">
+          <h2>{t.unlock}</h2>
+          <p>{t.price}</p>
+          <button className="premium-button" onClick={() => alert("🚀 Premium launching soon! We'll notify you when it's available.")}>
+            Coming Soon
+          </button>
+        </div>
+      </div>
+    );
+  };
+
+  const renderCalculator = () => {
+    const results = calculateTax();
+
+    return (
+      <div className="calculator-page">
+        <div className="calculator-container">
+          <h2>{t.subtitle}</h2>
+
+          <div className="input-section">
+            <div className="input-group">
+              <label>{t.country}:</label>
+              <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
+                {Object.entries(countries).map(([key, country]) => (
+                  <option key={key} value={key}>{country.flag} {country.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="input-group">
+              <label>{t.income}:</label>
+              <input type="number" value={income} onChange={(e) => setIncome(e.target.value)} placeholder="50000" />
+            </div>
+
+            <div className="input-group">
+              <label>{t.platform}:</label>
+              <select value={platform} onChange={(e) => setPlatform(e.target.value)}>
+                {Object.entries(platforms).map(([key, plat]) => (
+                  <option key={key} value={key}>{plat.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="language-selector">
+              <button onClick={() => setLanguage("en")} className={language === "en" ? "active" : ""}>English</button>
+              <button onClick={() => setLanguage("es")} className={language === "es" ? "active" : ""}>Español</button>
+              <button onClick={() => setLanguage("ru")} className={language === "ru" ? "active" : ""}>Русский</button>
+            </div>
+          </div>
+
+          <div className="results-section">
+            <h3>{t.results}</h3>
+
+            <div className="results-grid">
+              <div className="result-item">
+                <span>{t.grossIncome}</span>
+                <strong>{countries[selectedCountry].currency}{results.grossIncome.toFixed(2)}</strong>
+              </div>
+
+              <div className="result-item commission">
+                <span>{t.platformCommission}</span>
+                <strong>-{countries[selectedCountry].currency}{results.platformCommission.toFixed(2)}</strong>
+              </div>
+
+              <div className="result-item taxes">
+                <span>{t.totalTaxes}</span>
+                <strong>-{countries[selectedCountry].currency}{results.taxes.toFixed(2)} ({results.taxPercentage.toFixed(1)}%)</strong>
+              </div>
+
+              <div className="result-item net-income">
+                <span>{t.netIncome}</span>
+                <strong>{countries[selectedCountry].currency}{results.netIncome.toFixed(2)}</strong>
+              </div>
+
+              <div className="result-item monthly">
+                <span>{t.monthlyIncome}</span>
+                <strong>{countries[selectedCountry].currency}{results.monthlyNetIncome.toFixed(2)}</strong>
+              </div>
+            </div>
+
+            <div className="breakdown-chart">
+              <div className="chart-bar">
+                <div className="bar-segment green" style={{ width: `${(results.netIncome / results.grossIncome) * 100}%` }}></div>
+                <div className="bar-segment orange" style={{ width: `${(results.taxes / results.grossIncome) * 100}%` }}></div>
+                <div className="bar-segment red" style={{ width: `${(results.platformCommission / results.grossIncome) * 100}%` }}></div>
+              </div>
+              <div className="legend">
+                <span><span className="dot green"></span>Net Income</span>
+                <span><span className="dot orange"></span>Taxes</span>
+                <span><span className="dot red"></span>Commission</span>
+              </div>
+            </div>
+          </div>
+
+          <button className="back-button" onClick={() => setActiveTab("landing")}>← Back to Home</button>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="app-container">
+      <nav className="navbar">
+        <h1 onClick={() => setActiveTab("landing")} style={{ cursor: "pointer" }}>💰 {t.title}</h1>
+        <button className="nav-button" onClick={() => setActiveTab("landing")}>Home</button>
+        <button className="nav-button" onClick={() => setActiveTab("calculator")}>Calculator</button>
+      </nav>
+
+      <main className="main-content">
+        {activeTab === "landing" ? renderLanding() : renderCalculator()}
+      </main>
+
+      <footer className="footer">
+        <p>© 2024 Freelance Tax Pro. All rights reserved.</p>
+        <p>This is a calculation tool. Consult a tax professional for personalized advice.</p>
+      </footer>
+    </div>
+  );
 }
